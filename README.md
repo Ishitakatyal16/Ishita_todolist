@@ -7,6 +7,7 @@ This is a TODO List app. In this app, users can create to-do lists, where they c
 * NODEJS
 * EXPRESS
 * MONGODB
+* ROBO3T
 
 # WORKING
 In this app there is a form wherein user can add the description of the task, choose the category and the due date for the completion of the task.
