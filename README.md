@@ -9,7 +9,7 @@ This is a TODO List app. In this app, users can create to-do lists, where they c
 * MONGODB
 
 # WORKING
-In this app there is a form where in user can add the description of the task, choose the category and the due date for the completion of the task.
+In this app there is a form wherein user can add the description of the task, choose the category and the due date for the completion of the task.
 User can can add and delete the tasks in the list using the "ADD" and "DELETE" buttons in the app.
 
 # SCREENSHOTS
