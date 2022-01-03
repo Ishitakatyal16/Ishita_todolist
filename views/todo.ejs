@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" type="text/css" href="todo.css" />
+    <!-- this is the main stylesheet -->
+
+    <title>TODO APP</title>
+  </head>
+
+  <body>
+    <div
+      class="container"
+      style="background-color: rgba(238, 151, 202, 0.884); margin-top: 30px; width:70%; height: 90%;
+      font-size: clamp(10px,3vw,18px) !important;"
+      
+    >
+
+    
+      <div id="heading">
+        <i class="fas fa-clipboard-list" style="font-size: 30px;"></i>
+        TODO APP
+        </div>
+
+      <hr class="style2" />
+      <div class="row ms-2 me-2 mt-3">
+      <form class="item" action="/" method="post">
+        <div class="form-group">
+          <labels
+            for="todolistdesc"
+            style="
+              font-size: clamp(10px,3vw,18px);
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+            "
+          >
+            DESCRIPTION
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="todolistdesc"
+            name="description"
+            placeholder="What do you need to do?"
+          />
+        </div>
+      <div class="row">
+        <div class="col-5" style="margin-left: 5%;">
+          <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">CATEGORY:</span>
+        <select name="xyz" id="drop-down" required> 
+          
+          <option value="" >Choose a category</option>
+           <option value="Personal">Personal</option>
+           <option value="Work">Work</option>
+           <option value="College">College</option>
+           <option value="Cleaning">Cleaning</option>
+           <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="col-5"style="margin-left: 5%;" >
+      <div id="date-box" width=20% >
+        <span class="container-heading" style=" font-size: clamp(10px,10vw,18px);">
+                 DATE:
+        </span>
+        <input id="date-input" type="date" name="date"  >
+     </div>
+   </div>
+  </div>
+  <br/>
+      
+        <button type="submit" class="btn btn-primary" id="buttons1" style="font-size: clamp(10px,2vw,15px); ">
+                     <i class="fas fa-plus" style="margin-right: 5px;"></i>
+                         ADD
+      </button>
+    
+
+        
+    </div>
+ 
+      </form>
+
+     
+    <form action="/delete-item/" method="post">
+      <button type="submit" class="btn btn-danger" id="buttons1" style=" font-size: clamp(10px,2vw,15px)">
+              
+        <i class="fas fa-trash-alt"style="margin-right: 5px;"></i>
+             DELETE
+     </button>
+     <div
+        id="cards"
+         class="d-flex flex-wrap justify-content-evenly"
+       
+    >
+    <%  for (let i of newListitems) { %>
+       
+
+            <div class="card mb-3" style="width: 18rem">
+
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <div class="card-header bg-transparent border-success ">
+                    <%= i.category %>
+                </div>
+                
+                  <p class="card-text" style="text-align: center; display: inline; margin: 10px;"><%= i.description %>
+                    
+                   
+                    <div class="form-check ms-1 " style="display: inline-block;">
+                      <input class="form-check-input " type="checkbox" name="<%= i.id %>" id="flexCheckDefault">
+                      <label class="form-check-label " for="flexCheckDefault">
+                                                                             </label>
+                    </div>
+
+                  </p>
+
+                 
+                  <div class="card-footer bg-transparent border-success "><%= i.date %></div>
+                
+                </div>
+      
+                
+
+            </div>
+     
+      
+    </form>
+  
+  
+   <% } %>
+</div> 
+  
+       
+    
+ 
+</div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
